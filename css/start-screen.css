@@ -1,10 +1,10 @@
 .start-screen {
   min-height: 850px;
   max-height: 850px;
-  min-width: 1920px;
   background: url('./../img/bg.png') no-repeat;
-  background-size: contain;
+  background-size: fill;
   padding: 20px 388px 0 405px;
+  overflow: hidden;
 }
 
 .start-screen-title-wrapper {

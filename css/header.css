@@ -20,7 +20,7 @@
   justify-self: flex-end;
   width: 350px;
   height: 29px;
-  border-bottom: 1px solid #324950;
+  border-bottom: 1px solid var(--main-text-color);
 }
 .search-input {
   flex-grow: 1;
@@ -37,7 +37,7 @@
   align-self: flex-start;
 }
 .nav {
-  color:#324950;
+  color:var(--main-text-color);
   font-family: 'Heebo';
   font-weight: 500;
   font-style: normal;
