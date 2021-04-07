@@ -1,0 +1,41 @@
+.start-screen {
+  min-height: 850px;
+  max-height: 850px;
+  min-width: 1920px;
+  background: url('./../img/bg.png') no-repeat;
+  background-size: contain;
+  padding: 20px 388px 0 405px;
+}
+
+.start-screen-title-wrapper {
+  margin-top: 245px;
+
+  width: max-content;
+}
+.start-screen-title {
+  font-family: 'Roboto-Slab';
+
+  font-weight: 700;
+  font-style: normal;
+
+  color: #735440;
+  font-size: 48px;
+}
+.btn {
+  display: block;
+
+  width: max-content;
+  margin-top: 60px;
+
+  padding: 16px 31px;
+
+  background-color: #57984c;
+
+  font-family: 'Roboto';
+
+  font-weight: 500;
+  font-style: normal;
+
+  color: white;
+  text-transform: uppercase;
+}
