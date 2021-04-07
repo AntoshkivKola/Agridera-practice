@@ -20,12 +20,8 @@
   display: block;
   object-fit: contain;
   object-position: center;
-  /* position: absolute; */
   margin-top: auto;
-  /*top:auto;
-  left:auto;
-  right:auto;
-  bottom:0; */
+
 }
 .product-description {
   margin-top: 20px;
