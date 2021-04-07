@@ -1,3 +1,7 @@
+:root{
+  --main-text-color: #324950;
+}
+
 .fjb{
   display:flex;
   flex-direction: row;
