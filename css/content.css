@@ -15,21 +15,11 @@
   margin-bottom: 40px;
 }
 
-.margins{
+.margins {
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
-.text {
-
-  font-family: 'Roboto-Slab';
-
-  font-weight: 400;
-  font-style: normal;
-  font-size: 17px;
-  line-height: 25.5px;
-  color: var(--main-text-color);
-}
 .text > p + p {
   margin-top: 25px;
 }
@@ -40,15 +30,69 @@
   position: relative;
   padding-left: 25px;
 }
-.lb::before{
-  content:'';
+.lb::before {
+  content: '';
   position: absolute;
   z-index: 2;
   left: 0;
 
-  width:4px;
-  height:110%;
-  
-  background-color:#EB5757;
+  width: 4px;
+  height: 110%;
+
+  background-color: #eb5757;
   border-radius: 4px;
+}
+.tomato-info-list {
+  margin-top: 35px;
+  margin-bottom: 45px;
+
+  padding: 50px 20px;
+  background-color: #fff;
+}
+.tomato-info-subtitle {
+  padding-right: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--main-text-color);
+}
+.tomato-info-text {
+  padding-top: 15px;
+}
+.tomato-cards {
+  margin-top: 50px;
+}
+.tomato-card {
+  position: relative;
+
+  max-width: 350px;
+  min-height: 320px;
+  margin-bottom: 30px;
+}
+
+.img-wrapper {
+  position: relative;
+  max-width: 100%;
+  min-height: 250px;
+  max-height: 100%;
+}
+.img-tomato {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+.tomato-card-content {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  padding: 9px 0;
+
+  background-color: #fff;
+  text-align: center;
+}
+.tomato-card-text {
+  font-family: 'Roboto-Slab';
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22.83px;
 }
