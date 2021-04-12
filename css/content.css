@@ -96,3 +96,11 @@
   font-size: 16px;
   line-height: 22.83px;
 }
+
+
+@media screen and (max-width: 1073px) {
+  .tomato-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

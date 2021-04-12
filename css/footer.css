@@ -8,14 +8,14 @@
 }
 .footer-contacts {
   align-items: center;
-
+  flex-wrap: wrap;
   padding-top: 23px;
   padding-bottom: 23px;
 }
 
 .footer-nav-list {
   display: flex;
-
+  flex-wrap: wrap;
   text-transform: uppercase;
 
   font-family: 'Roboto';
@@ -51,4 +51,18 @@
   font-size: 14px;
   line-height: 19.98px;
   color: #b9b9b9;
+}
+@media screen and (max-width: 992px) {
+  .footer-ico-list {
+    margin: 10px auto;
+  }
+}
+@media screen and (max-width: 770px) {
+  .footer-ico-item {
+    margin: 10px auto;
+  }
+
+  /* .footer-nav-item + .footer-nav-item {
+    margin-left: 30px;
+  } */
 }
