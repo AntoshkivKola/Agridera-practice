@@ -1,0 +1,7 @@
+.tomato-banner{
+  width: 100%;
+  background: url('./../img/tomato-banner.png') no-repeat;
+  background-size: cover;
+  padding-top:20px;
+  overflow: hidden;
+}

@@ -12,3 +12,14 @@
   margin-left: auto;
   margin-right: auto;
 }
+.mb{
+  width: 1px;
+  margin-bottom: 19px;
+}
+.cmw{
+  max-width: 1100px;
+}
+
+.image-banner{
+  height:480px;
+}
