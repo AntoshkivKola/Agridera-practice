@@ -18,8 +18,7 @@
 }
 .main-activ-list {
   margin-top: 70px;
-  margin-left: 399px;
-  margin-right: 419px;
+ max-width: 1090px;
 
 }
 .main-activ-title {

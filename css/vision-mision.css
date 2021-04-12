@@ -5,8 +5,7 @@
   padding: 71px 0 100px 0;
 }
 .v-m-container {
-  margin-right: 405px;
-  margin-left: 405px;
+  max-width: 1095px;
   padding: 0;
 }
 
