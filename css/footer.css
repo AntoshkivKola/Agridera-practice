@@ -58,11 +58,11 @@
   }
 }
 @media screen and (max-width: 770px) {
-  .footer-ico-item {
+  .footer-nav-item {
+    padding: 0 15px;
     margin: 10px auto;
   }
-
-  /* .footer-nav-item + .footer-nav-item {
-    margin-left: 30px;
-  } */
+  .footer-nav-item + .footer-nav-item {
+    margin-left: auto;
+  }
 }
