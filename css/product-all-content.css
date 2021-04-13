@@ -40,25 +40,25 @@
   background-color: #eb5757;
   border-radius: 4px;
 }
-.tomato-info-list {
+.product-info-list {
   margin-top: 35px;
   margin-bottom: 45px;
 
   padding: 50px 20px;
   background-color: #fff;
 }
-.tomato-info-subtitle {
+.product-info-subtitle {
   padding-right: 30px;
   padding-bottom: 15px;
   border-bottom: 1px solid var(--main-text-color);
 }
-.tomato-info-text {
+.product-info-text {
   padding-top: 15px;
 }
-.tomato-cards {
+.product-cards {
   margin-top: 50px;
 }
-.tomato-card {
+.product-card {
   position: relative;
 
   max-width: 350px;
@@ -72,13 +72,13 @@
   min-height: 340px;
   max-height: 100%;
 }
-.img-tomato {
+.img-product {
   z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.tomato-card-content {
+.product-card-content {
   z-index: 2;
   position: relative;
   margin-top:-50px;
@@ -88,7 +88,7 @@
   background-color: #fff;
   text-align: center;
 }
-.tomato-card-text {
+.product-card-text {
   font-family: 'Roboto-Slab';
 
   font-weight: 400;
@@ -99,7 +99,7 @@
 
 
 @media screen and (max-width: 1073px) {
-  .tomato-card {
+  .product-card {
     margin-left: auto;
     margin-right: auto;
   }

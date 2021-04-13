@@ -7,7 +7,7 @@
   background-size: cover;
   overflow: hidden;
 }
-.tomato-link {
+.product-link {
   max-width: 185px;
   align-items: center;
 
@@ -18,12 +18,7 @@
   line-height: 23px;
   text-align: right;
 }
-.wrapper {
-}
-.left-side {
-}
-.right-side {
-}
+
 .main-title {
   padding-right: 5px;
   font-family: 'Roboto-Slab';
