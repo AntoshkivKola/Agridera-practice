@@ -69,17 +69,19 @@
 .img-wrapper {
   position: relative;
   max-width: 100%;
-  min-height: 250px;
+  min-height: 340px;
   max-height: 100%;
 }
 .img-tomato {
   z-index: 1;
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 .tomato-card-content {
   z-index: 2;
   position: relative;
+  margin-top:-50px;
   width: 100%;
   padding: 9px 0;
 
