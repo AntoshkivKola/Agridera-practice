@@ -1,27 +1,27 @@
-:root{
+:root {
   --main-text-color: #324950;
-  --second-text-color: #57984C;
+  --second-text-color: #57984c;
 }
 
-.fjb{
-  display:flex;
+.fjb {
+  display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-.center{
+.center {
   margin-left: auto;
   margin-right: auto;
 }
-.mb{
+.mb {
   width: 1px;
   margin-bottom: 19px;
 }
-.cmw{
+.cmw {
   max-width: 1100px;
 }
 
-.image-banner{
-  height:480px;
+.image-banner {
+  height: 480px;
 }
 
 .text {
@@ -34,14 +34,45 @@
   color: var(--main-text-color);
 }
 
-.subtitle{
+.subtitle {
   font-family: 'Roboto-Slab';
 
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
   line-height: 28.6px;
+  color: var(--main-text-color);
 }
-.gren-color{
+.bold-text {
+  font-weight: 700;
+}
+.gren-color {
   color: #57984c;
+}
+.download-pdf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+  padding: 11px 30px;
+  min-width: 225px;
+
+  border: 2px solid var(--second-text-color);
+  border-radius: 60px;
+
+  background-color: inherit;
+
+  font-family: 'Roboto-Slab';
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--second-text-color);
+  margin: 40px 0;
+
+  margin-left: auto;
+  margin-right: 100px;
+
 }

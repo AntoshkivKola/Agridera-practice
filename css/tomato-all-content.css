@@ -23,9 +23,7 @@
 .text > p + p {
   margin-top: 25px;
 }
-.bold-text {
-  font-weight: 700;
-}
+
 .lb {
   position: relative;
   padding-left: 25px;
