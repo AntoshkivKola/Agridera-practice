@@ -1,11 +1,12 @@
 .vision-mision {
   background: url('./../img/Union-bg.png') no-repeat center;
-  /* min-height: 1270px; */
   background-color: #f7f7f7;
   padding: 71px 0 100px 0;
 }
 .v-m-container {
   max-width: 1095px;
+  min-width: 300px;
+  width: 100%;
   padding: 0;
 }
 
@@ -20,15 +21,7 @@
 .text {
   max-width: 495px;
 }
-.title {
-  font-family: 'Roboto-Slab';
 
-  font-weight: 700;
-  font-style: normal;
-  font-size: 64px;
-  line-height: 91.33px;
-  color: var(--main-text-color);
-}
 .description {
   margin-top: 30px;
 
@@ -45,12 +38,17 @@
 }
 .img-wrapper {
   position: relative;
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
+  min-width: 250px;
   height: 500px;
+  
+  /* min-height: 250px; */
 }
 .img {
   position: absolute;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   box-shadow: -20px 4px 40px 0px rgba(34, 60, 80, 0.2);
 }
@@ -81,5 +79,20 @@
   height: 0;
   border-style: solid;
   border-width: 15px 0 15px 30px;
-  border-color: transparent transparent transparent #57984C;
+  border-color: transparent transparent transparent #57984c;
+}
+@media screen and (max-width: 1200px) {
+  .v-m-container {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .vision,
+  .mission {
+    flex-direction: column;
+  }
+  .vision > .text,
+  .mission > .text {
+    margin-bottom: 30px;
+  }
 }
