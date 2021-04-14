@@ -107,11 +107,6 @@
     padding: 20px 15px 170px 15px;
   }
   .img-wrapper {
-    max-height: 400px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .img-wrapper {
     max-height: 350px;
   }
 }
