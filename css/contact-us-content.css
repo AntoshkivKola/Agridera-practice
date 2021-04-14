@@ -74,6 +74,11 @@
   border-bottom: 1px solid var(--second-text-color);
   margin-bottom: 15px;
 }
+@media screen and (max-width: 1200px) {
+  .cupthca-group {
+    flex-wrap: wrap;
+  }
+}
 @media screen and (max-width: 1024px) {
   .content > .container {
     padding: 0 70px;
