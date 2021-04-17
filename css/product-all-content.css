@@ -1,11 +1,15 @@
 .content {
-  background-color: #fcf0f0;
+  background-color: var(--potato-color);
   padding: 50px 0;
 }
 .margins {
   margin-top: 40px;
   margin-bottom: 20px;
 }
+.product-banner {
+  background-image: url('./../img/potato-banner2.jpg');
+}
+
 
 .text > p + p {
   margin-top: 25px;

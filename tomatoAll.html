@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./css/product-all-style.css" />
     <title>tomato all</title>
     <script defer src="./script/index.js"></script>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./js/main.js"></script>
   </head>
   <body>
     <div class="mb"></div>
@@ -50,11 +51,11 @@
       </div>
     </header>
     <div class="mb"></div>
-    <div class="image-banner tomato-banner"></div>
+    <div class="image-banner product-banner"></div>
 
     <div class="content">
       <div class="container cmw">
-        <div class="main-title">Agridera Fresh Market Tomato Hybrids</div>
+        <div class="main-title">Agridera Fresh Market Potatoes Hybrids</div>
         <img class="decoration" src="./img/xxxxx.png" alt="decoration" />
 
         <section class="text margins">
@@ -149,86 +150,19 @@
             around the world.
           </p>
         </div>
-        <section class="product-cards row center">
-          <article class="product-card ">
+        <section id="article" class="product-cards row center ">
+
+          <article class="product-card" v-for="(p) in products">
             <div class="img-wrapper">
-              <a href="./tomatoOne.html">   <img class="img-product" src="./img/tomato-img-1.png" alt="tomato-img-1" /></a>
+              <a href="./tomatoOne.html">   <img class="img-product" :src="'./img/' + p.image" alt="potato img" /></a>
             </div>
             <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1000 (TAG 853)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
+              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">{{ p.title }}</h3></a>
+              <span class="product-card-text gren-color" >{{p.short_text}}</span>
             </div>
           </article>
 
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-2.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1001 (TAG 855)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-3.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1002 (TAG 809)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-4.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1003 (TAG 834)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-5.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1004 (TAG 848)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-6.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1005 (TAG 800)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-7.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1006 (TAG 898)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="img-wrapper">
-              <a href="./tomatoOne.html">  <img class="img-product" src="./img/tomato-img-8.png" alt="tomato-img-1" /></a>
-            </div>
-            <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">TAG 1007 (TAG 816)</h3></a>
-              <span class="product-card-text gren-color" >Tomato Determinate Red Standard Round</span>
-            </div>
-          </article>
+         
         </section>
       </div>
     </div>

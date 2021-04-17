@@ -4,7 +4,7 @@ const vanBurger = document.querySelector('#nav-burger')
 
 const nav = document.querySelector('#nav')
 let isOpen = true
-console.log(vanBurger, nav)
+
 vanBurger.addEventListener('click', toggleNav)
 
 function toggleNav () {
@@ -17,6 +17,5 @@ function toggleNav () {
     nav.classList.add('is-close')
 
   }
-  console.log(nav.classList)
   isOpen = !isOpen
 }
