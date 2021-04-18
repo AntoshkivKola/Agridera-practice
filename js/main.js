@@ -37,14 +37,46 @@ const app = new Vue({
         image: 'potato5.jpg',
         desc: 'Full description'
       }
-    ]
+    ],
+    product: [],
+    btnVisible: false
   },
-  mounted: function(){
-    console.log(window.localStorage.getItem('prod'));
+  mounted: function () {
+    this.getProduct(), this.checkInCart()
   },
   methods: {
     addItem: function (id) {
       window.localStorage.setItem('prod', id)
+    },
+    getProduct: function () {
+      if (window.location.hash) {
+        const id = window.location.hash.replace('#', '')
+        if (this.products?.length) {
+          this.product = this.products.filter(p => p.id === Number(id))[0]
+        }
+      }
+    },
+    addToCart: function (id) {
+      const cart = []
+
+      if (window.localStorage.getItem('cart')) {
+        cart.push(...window.localStorage.getItem('cart').split(','))
+      }
+      if (!cart.find(i => i === String(id))) {
+        cart.push(id)
+        window.localStorage.setItem('cart', cart.join())
+        this.btnVisible = true
+      }
+    },
+    checkInCart: function () {
+      if (
+        window.localStorage
+          .getItem('cart')
+          .split(',')
+          .find(i => i === String(this.product.id))
+      ) {
+        this.btnVisible = true
+      }
     }
   }
 })

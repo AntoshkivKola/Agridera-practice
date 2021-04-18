@@ -154,10 +154,10 @@
 
           <article class="product-card" v-for="(p) in products">
             <div class="img-wrapper">
-              <a href="./tomatoOne.html">   <img class="img-product" :src="'./img/' + p.image" alt="potato img" /></a>
+              <a :href="'./tomatoOne.html#'+p.id">   <img class="img-product" :src="'./img/' + p.image" alt="potato img" /></a>
             </div>
             <div class="product-card-content">
-              <a href="./tomatoOne.html">  <h3 class="subtitle gren-color">{{ p.title }}</h3></a>
+              <a :href="'./tomatoOne.html#'+p.id">  <h3 class="subtitle gren-color">{{ p.title }}</h3></a>
               <span class="product-card-text gren-color" >{{p.short_text}}</span>
             </div>
           </article>
