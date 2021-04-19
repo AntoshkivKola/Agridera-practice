@@ -102,11 +102,23 @@ const app = new Vue({
       )
 
       window.localStorage.setItem('cart', cart.join())
+<<<<<<< HEAD
     }, 
     makeOrder: function () {
       this.cart = []
       window.localStorage.setItem('cart', '')
    
+=======
+    },
+    makeOrder: function () {
+      this.cart = []
+      window.localStorage.setItem('cart', '')
+      console.log(this.cart)
+      console.log(this.contactFields instanceof Object)
+      this.contactFields.forEach(i => {
+        console.log(i)
+      })
+>>>>>>> 041550b986a1cfd1524bd4db70b47821dbf21aa6
       this.isSubmitted = true
     }
   }
