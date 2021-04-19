@@ -39,10 +39,13 @@ const app = new Vue({
       }
     ],
     product: [],
-    btnVisible: false
+    cart: [],
+    contactFields: [],
+    btnVisible: false,
+    isSubmitted: false
   },
   mounted: function () {
-    this.getProduct(), this.checkInCart()
+    this.getProduct(), this.checkInCart(), this.getCart()
   },
   methods: {
     addItem: function (id) {
@@ -67,6 +70,7 @@ const app = new Vue({
         window.localStorage.setItem('cart', cart.join())
         this.btnVisible = true
       }
+      console.log(cart)
     },
     checkInCart: function () {
       if (
@@ -77,6 +81,33 @@ const app = new Vue({
       ) {
         this.btnVisible = true
       }
+    },
+    getCart: function () {
+      const productsId = [...window.localStorage.getItem('cart').split(',')]
+      productsId.forEach(productId => {
+        this.cart.push(...this.products.filter(p => p.id === Number(productId)))
+      })
+      if (this.cart?.length) {
+        this.cart.sort((a, b) => a.id - b.id)
+      }
+    },
+    removeFromCart: function (id) {
+      const cart = [...window.localStorage.getItem('cart').split(',')]
+
+      this.cart = [...this.cart.filter(cartItem => cartItem.id !== id)]
+
+      cart.splice(
+        cart.findIndex(cartItem => cartItem === String(id)),
+        1
+      )
+
+      window.localStorage.setItem('cart', cart.join())
+    },
+    makeOrder: function () {
+      this.cart = []
+      window.localStorage.setItem('cart', '')
+   
+      this.isSubmitted = true
     }
   }
 })

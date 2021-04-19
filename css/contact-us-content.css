@@ -74,6 +74,41 @@
   border-bottom: 1px solid var(--second-text-color);
   margin-bottom: 15px;
 }
+.table-wrapper {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.table-cart {
+  width: 100%;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.table-image {
+  width: 150px;
+  height: 120px;
+}
+.btn-remove-item {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid var(--second-text-color);
+  border-radius: 5px;
+
+  background-color: transparent;
+
+  color: #e84a5f;
+
+  font-size: 20px;
+}
+.btn-remove-item:hover {
+  background-color: #ff847b;
+  color: #e84a5f;
+}
 @media screen and (max-width: 1200px) {
   .cupthca-group {
     flex-wrap: wrap;
@@ -111,6 +146,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  .cart-item {
+    flex-direction: column;
+  }
+  .cart-item > td {
+    margin: 10px auto;
+  }
+  .btn-remove-item {
+    width: 200px;
   }
 }
 @media screen and (max-width: 480px) {
