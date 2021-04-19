@@ -63,9 +63,7 @@
           <section class="left-side col-xl-6">
             <h1 class="main-title">
               {{product.title}}
-              <span class="gren-color">
-                {{product.short_text}}</span
-              >
+              <span class="gren-color"> {{product.short_text}}</span>
             </h1>
             <img class="decoration mg" src="./img/xxxxx.png" alt="decoration" />
 
@@ -97,21 +95,21 @@
           </section>
           <section class="right-side col-xl-6">
             <div class="img-wrapper">
-              <img
-                class="img"
-                :src="'./img/'+product.image"
-                alt="tomato img"
-              />
+              <img class="img" :src="'./img/'+product.image" alt="tomato img" />
             </div>
 
-            <button v-if="!btnVisible" @click.prevent="addToCart(product.id)" class="download-pdf-btn">
-              <!-- <img src="./img/ico_pdf.png" alt="ico pdf" /> -->
+            <button
+              v-if="!btnVisible"
+              @click.prevent="addToCart(product.id)"
+              class="download-pdf-btn"
+            >
               Add to cart
             </button>
-            <button v-if="btnVisible" class="download-pdf-btn">
-              <!-- <img src="./img/ico_pdf.png" alt="ico pdf" /> -->
-              Go to cart
-            </button>
+            <a href="./conractUs.html">
+              <button v-if="btnVisible" class="download-pdf-btn">
+                 Go to cart
+              </button>
+            </a>
             <ul class="text">
               <ul class="sub-list">
                 <h3 class="subtitle gren-color">Cycle</h3>

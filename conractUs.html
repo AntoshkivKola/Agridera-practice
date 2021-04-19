@@ -7,7 +7,8 @@
     <title>contact us</title>
     <link rel="stylesheet" href="./css/contact-us-style.css" />
     <script defer src="./script/index.js"></script>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./js/main.js"></script>
   </head>
   <body>
     <div class="mb"></div>
@@ -30,7 +31,9 @@
         </form>
         <nav class="nav  is-close" id="nav">
           <ul class="nav-list fjb">
-            <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Company Profile </a>
             </li>
@@ -41,88 +44,219 @@
               <a class="nav-link" href="#">Services</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">R & D</a></li>
-            <li class="nav-item"><a class="nav-link" href="./conractUs.html">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="./conractUs.html">Contact</a>
+            </li>
           </ul>
         </nav>
-
-
-
       </div>
     </header>
     <div class="mb"></div>
 
     <div class="image-banner contact-us-bunner"></div>
 
-    <section class="content">
+    <section id="article" class="content">
       <div class="container">
         <h1 class="main-title">
           Contact us
         </h1>
 
-        <img class="decoration mg" src="./img/xxxxx.png" alt="decoration" />
-        <form action="post" class="form fjb">
-          <div class="left-input-group">
-            <label class="text">
-              <p>Name *</p>
-              <input class="text input" name="name" type="text" />
-            </label>
-            <label class="text">
-              <p>Company Name</p>
-              <input class="text input" name="company_name" type="text" />
-            </label>
-            <label class="text">
-              <p>Position</p>
-              <input class="text input" name="position" type="text" />
-            </label>
-            <label class="text">
-              <p>City</p>
-              <input class="text input" name="city" type="text" />
-            </label>
-            <label class="text">
-              <p>Country</p>
-              <input class="text input" name="country" type="text" />
-            </label>
-            <label class="text">
-              <p>Telephone</p>
-              <input class="text input" name="tel" type="tel" />
-            </label>
-            <label class="text">
-              <p>Email *</p>
-              <input class="text input" name="email" type="email" />
-            </label>
+        <div v-if="!isSubmitted">
+          <h1 class="subtitle">
+            Your card
+          </h1>
+          <div class="table-wrapper text">
+            <table class="table-cart">
+              <tr class="cart-item" v-for="(cartItem) in cart">
+                <td>
+                  <div class="table-image-wrapper">
+                    <img
+                      class="table-image"
+                      :src="'./img/'+cartItem.image"
+                      :alt="cartItem.image"
+                    />
+                  </div>
+                </td>
+                <td>{{cartItem.title}}</td>
+                <td>{{cartItem.short_text}}</td>
+                <td>
+                  <button
+                    class="btn-remove-item"
+                    @click.prevent="removeFromCart(cartItem.id)"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            </table>
           </div>
-          <div class="right-input-group">
-            <label class="text">
-              <p>You are a</p>
-              <input class="text input" name="name" type="text" />
-            </label>
-            <label class="text">
-              <p>If other, please specify</p>
-              <input class="text input" name="company_name" type="text" />
-            </label>
-            <label class="text">
-              <p>You are interested in</p>
-              <textarea name="interested" class="text textarea"></textarea>
-            </label>
-            <label class="text">
-              <p>Please type this code</p>
-              <div class="fjb cupthca-group">
-                <img src="./img/cupthca.png" alt="cupthca" />
+          <div>
+            <img class="decoration mg" src="./img/xxxxx.png" alt="decoration" />
+          </div>
+          <form @submit.prevent="makeOrder()" action="post" class="form fjb">
+            <div class="left-input-group">
+              <label class="text">
+                <p>Name *</p>
                 <input
-                  class="text input input-cupthca"
+                  v-model="contactFields.name"
+                  required
+                  class="text input"
+                  name="name"
+                  type="text"
+                />
+              </label>
+              <label class="text">
+                <p>Company Name</p>
+                <input
+                  v-model="contactFields.company_name"
+                  class="text input"
+                  name="company_name"
+                  type="text"
+                />
+              </label>
+              <label class="text">
+                <p>Position</p>
+                <input
+                  v-model="contactFields.position"
+                  class="text input"
+                  name="position"
+                  type="text"
+                />
+              </label>
+              <label class="text">
+                <p>City</p>
+                <input
+                  v-model="contactFields.city"
+                  class="text input"
                   name="city"
                   type="text"
                 />
-                <button class="submit-btn text" type="submit">
-                  Send Message
-                </button>
-              </div>
-            </label>
-          </div>
-        </form>
+              </label>
+              <label class="text">
+                <p>Country</p>
+                <input
+                  v-model="contactFields.country"
+                  class="text input"
+                  name="country"
+                  type="text"
+                />
+              </label>
+              <label class="text">
+                <p>Telephone</p>
+                <input
+                  v-model="contactFields.tel"
+                  class="text input"
+                  name="tel"
+                  type="tel"
+                />
+              </label>
+              <label class="text">
+                <p>Email *</p>
+                <input
+                  v-model="contactFields.email"
+                  required
+                  class="text input"
+                  name="email"
+                  type="email"
+                />
+              </label>
+            </div>
+            <div class="right-input-group">
+              <label class="text">
+                <p>You are a</p>
+                <input
+                  v-model="contactFields.your"
+                  class="text input"
+                  name="your"
+                  type="text"
+                />
+              </label>
+              <label class="text">
+                <p>If other, please specify</p>
+                <input
+                  v-model="contactFields.other"
+                  class="text input"
+                  name="other"
+                  type="text"
+                />
+              </label>
+              <label class="text">
+                <p>You are interested in</p>
+                <textarea
+                  v-model="contactFields.interested"
+                  name="interested"
+                  class="text textarea"
+                ></textarea>
+              </label>
+              <label class="text">
+                <p>Please type this code</p>
+                <div class="fjb cupthca-group">
+                  <img src="./img/cupthca.png" alt="cupthca" />
+                  <input
+                    v-model="contactFields.cupthca"
+                    class="text input input-cupthca"
+                    name="cupthca"
+                    type="text"
+                  />
+                  <button class="submit-btn text" type="submit">
+                    Send Message
+                  </button>
+                </div>
+              </label>
+            </div>
+          </form>
+        </div>
+        <!--  -->
+        <div v-if="isSubmitted">
+          <form @submit.prevent="makeOrder()" action="post" class="form fjb">
+            <div class="left-input-group">
+              <label class="text">
+                <p>Name *</p>
+                <span class="gren-color">{{contactFields.name}} </span>
+              </label>
+              <label class="text">
+                <p>Company Name</p>
+                <span class="gren-color">{{contactFields.company_name}} </span>
+              </label>
+              <label class="text">
+                <p>Position</p>
+                <span class="gren-color">{{contactFields.position}} </span>
+              </label>
+              <label class="text">
+                <p>City</p>
+                <span class="gren-color">{{contactFields.city}} </span>
+              </label>
+              <label class="text">
+                <p>Country</p>
+                <span class="gren-color">{{contactFields.country}} </span>
+              </label>
+              <label class="text">
+                <p>Telephone</p>
+                <span class="gren-color">{{contactFields.tel}} </span>
+              </label>
+              <label class="text">
+                <p>Email *</p>
+                <span class="gren-color">{{contactFields.email}} </span>
+              </label>
+            </div>
+            <div class="right-input-group">
+              <label class="text">
+                <p>You are a</p>
+                <span class="gren-color">{{contactFields.your}} </span>
+              </label>
+              <label class="text">
+                <p>If other, please specify</p>
+                <span class="gren-color">{{contactFields.other}} </span>
+              </label>
+              <label class="text">
+                <p>You are interested in</p>
+                <span class="gren-color">{{contactFields.interested}} </span>
+              </label>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="our-adress text">
-        
         <h2 class="subtitle gren-color center">Our Address</h2>
         <p>AGRIDERA Seeds & Agriculture Ltd.</p>
         <p>P.O Box 103,</p>
@@ -144,7 +278,9 @@
                   <a class="footer-nav-link" href="#">MANAGEMENT </a>
                 </li>
                 <li class="footer-nav-item">
-                  <a class="footer-nav-link" href="./tomatoAll.html">PRODUCTS </a>
+                  <a class="footer-nav-link" href="./tomatoAll.html"
+                    >PRODUCTS
+                  </a>
                 </li>
                 <li class="footer-nav-item">
                   <a class="footer-nav-link" href="#">R&D </a>
