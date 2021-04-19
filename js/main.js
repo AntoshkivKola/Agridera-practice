@@ -102,7 +102,7 @@ const app = new Vue({
       )
 
       window.localStorage.setItem('cart', cart.join())
-    },
+    }, 
     makeOrder: function () {
       this.cart = []
       window.localStorage.setItem('cart', '')
