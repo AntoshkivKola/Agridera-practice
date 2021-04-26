@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agridera</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="./manifest.json" />
     <script defer src="./script/index.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(() => {
+          console.log('SW registered!')
+        })
+      }
+    </script>
   </head>
   <body>
     <!-- -----Start-screen----- -->
@@ -30,7 +37,9 @@
           </form>
           <nav class="nav  is-close" id="nav">
             <ul class="nav-list fjb">
-              <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Company Profile </a>
               </li>
@@ -41,12 +50,11 @@
                 <a class="nav-link" href="#">Services</a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#">R & D</a></li>
-              <li class="nav-item"><a class="nav-link" href="./conractUs.html">Contact</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="./conractUs.html">Contact</a>
+              </li>
             </ul>
           </nav>
-
-
-
         </div>
       </header>
       <div class="start-screen-title-wrapper title-wrapper center">
@@ -204,7 +212,9 @@
                   <a class="footer-nav-link" href="#">MANAGEMENT </a>
                 </li>
                 <li class="footer-nav-item">
-                  <a class="footer-nav-link" href="./tomatoAll.html">PRODUCTS </a>
+                  <a class="footer-nav-link" href="./tomatoAll.html"
+                    >PRODUCTS
+                  </a>
                 </li>
                 <li class="footer-nav-item">
                   <a class="footer-nav-link" href="#">R&D </a>
