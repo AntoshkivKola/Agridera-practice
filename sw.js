@@ -1,10 +1,13 @@
 self.addEventListener('install', function (event) {
   console.log('[Serwice worker] Installing ...', event)
   event.waitUntil(
-    caches.open('static').then(cache => {
+    caches.open('static').then(function (cache) {
       console.log('precahing')
       cache.add('./index.html')
+      cache.add('./img/Logo.png')
+      
       cache.add('/')
+      console.log(cache)
     })
   )
 })
@@ -17,11 +20,11 @@ self.addEventListener('activate', function (event) {
 self.addEventListener('fetch', function (event) {
   console.log('[Serwice worker] Fetching something ...', event)
   event.respondWith(
-    cache.match(event.request).then(response => {
+    caches.match(event.request).then(response => {
       if (response) {
         return response
       } else {
-        fetch(event.request)
+        return fetch(event.request)
       }
     })
   )
