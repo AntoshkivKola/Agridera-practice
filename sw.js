@@ -5,7 +5,7 @@ self.addEventListener('install', function (event) {
       console.log('precahing')
       cache.add('./index.html')
       cache.add('./img/Logo.png')
-      
+
       cache.add('/')
       console.log(cache)
     })
@@ -28,4 +28,8 @@ self.addEventListener('fetch', function (event) {
       }
     })
   )
+})
+
+self.addEventListener('push', event => {
+  self.registration.showNotification(event.data.text(), {})
 })
